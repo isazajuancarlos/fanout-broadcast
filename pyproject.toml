@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fanout-broadcast"
+version = "0.1.1"
+description = "Reparte un mensaje a varios canales con aislamiento de fallos: un canal caído no detiene a los demás, y un reporte te dice qué se entregó, qué se omitió y qué falló. Sin dependencias."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Juan Carlos Isaza", email = "isazajuancarlos@gmail.com" }]
+keywords = ["fanout", "broadcast", "notifications", "multi-channel", "webhook", "publish", "failure-isolation", "alerting"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Communications",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/isazajuancarlos/fanout-broadcast"
+Issues = "https://github.com/isazajuancarlos/fanout-broadcast/issues"
+Blog = "https://xiliux.com/blog/repartir-a-varios-canales-sin-que-uno-tumbe-al-resto"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
